@@ -35,7 +35,7 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
       - name: set dist-tag
         run: |
-           echo "r_tag=latest" >> $GITHUB_ENV;;
+           echo "r_tag=latest" >> $GITHUB_ENV
       - name: publish
         run: |
           echo ">> dist-tag: ${{ env.r_tag }}"
