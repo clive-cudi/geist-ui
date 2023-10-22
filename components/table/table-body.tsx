@@ -87,6 +87,6 @@ const TableBody = <TableDataItem extends TableDataItemBase>({
   )
 }
 
-TableBody.defaultProps = defaultProps
+// TableBody.defaultProps = defaultProps
 TableBody.displayName = 'GeistTableBody'
 export default TableBody

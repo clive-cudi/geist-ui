@@ -31,25 +31,25 @@ const InputComponent = React.forwardRef<
     {
       label,
       labelRight,
-      type,
-      htmlType,
+      type = defaultProps.type,
+      htmlType = defaultProps.htmlType,
       icon,
       iconRight,
-      iconClickable,
+      iconClickable = defaultProps.iconClickable,
       onIconClick,
-      initialValue,
+      initialValue = defaultProps.initialValue,
       onChange,
-      readOnly,
+      readOnly = defaultProps.readOnly,
       value,
       onClearClick,
-      clearable,
-      className,
+      clearable = defaultProps.clearable,
+      className = defaultProps.className,
       onBlur,
       onFocus,
-      autoComplete,
-      placeholder,
+      autoComplete = defaultProps.autoComplete,
+      placeholder = defaultProps.placeholder,
       children,
-      disabled,
+      disabled = defaultProps.disabled,
       ...props
     }: React.PropsWithChildren<InputProps> & typeof defaultProps,
     ref: React.Ref<HTMLInputElement | null>,
@@ -260,7 +260,7 @@ const InputComponent = React.forwardRef<
   },
 )
 
-InputComponent.defaultProps = defaultProps
+// InputComponent.defaultProps = defaultProps
 InputComponent.displayName = 'GeistInput'
 const Input = withScale(InputComponent)
 export default Input

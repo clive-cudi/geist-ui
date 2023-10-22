@@ -14,7 +14,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CardContentProps = Props & NativeAttrs
 
 const CardContentComponent: React.FC<React.PropsWithChildren<CardContentProps>> = ({
-  className,
+  className = '',
   children,
   ...props
 }: CardContentProps & typeof defaultProps) => {
@@ -43,7 +43,7 @@ const CardContentComponent: React.FC<React.PropsWithChildren<CardContentProps>> 
   )
 }
 
-CardContentComponent.defaultProps = defaultProps
+// CardContentComponent.defaultProps = defaultProps
 CardContentComponent.displayName = 'GeistCardContent'
 const CardContent = withScale(CardContentComponent)
 export default CardContent

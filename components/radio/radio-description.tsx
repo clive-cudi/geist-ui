@@ -16,7 +16,7 @@ export type RadioDescriptionProps = Props & NativeAttrs
 const RadioDescriptionComponent: React.FC<
   React.PropsWithChildren<RadioDescriptionProps>
 > = ({
-  className,
+  className = defaultProps.className,
   children,
   ...props
 }: React.PropsWithChildren<RadioDescriptionProps> & typeof defaultProps) => {
@@ -41,7 +41,7 @@ const RadioDescriptionComponent: React.FC<
   )
 }
 
-RadioDescriptionComponent.defaultProps = defaultProps
+// RadioDescriptionComponent.defaultProps = defaultProps
 RadioDescriptionComponent.displayName = 'GeistRadioDescription'
 const RadioDescription = withScale(RadioDescriptionComponent)
 export default RadioDescription

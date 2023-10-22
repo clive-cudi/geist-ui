@@ -18,9 +18,9 @@ const defaultProps = {
 export type ModalWrapperProps = Props
 
 const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
-  className,
+  className = defaultProps.className,
   children,
-  visible,
+  visible = defaultProps.visible,
   ...props
 }: React.PropsWithChildren<ModalWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -125,6 +125,6 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   )
 }
 
-ModalWrapper.defaultProps = defaultProps
+// ModalWrapper.defaultProps = defaultProps
 ModalWrapper.displayName = 'GeistModalWrapper'
 export default ModalWrapper

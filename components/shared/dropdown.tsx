@@ -119,4 +119,4 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
   },
 )
 
-export default Dropdown
+export default Dropdown;

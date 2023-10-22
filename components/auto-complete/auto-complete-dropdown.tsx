@@ -25,8 +25,8 @@ const AutoCompleteDropdown: React.FC<
 > = ({
   children,
   visible,
-  className,
-  dropdownStyle,
+  className = defaultProps.className,
+  dropdownStyle = defaultProps.dropdownStyle,
   disableMatchWidth,
   getPopupContainer,
 }: React.PropsWithChildren<AutoCompleteDropdownProps> & typeof defaultProps) => {
@@ -66,6 +66,6 @@ const AutoCompleteDropdown: React.FC<
   )
 }
 
-AutoCompleteDropdown.defaultProps = defaultProps
+// AutoCompleteDropdown.defaultProps = defaultProps
 AutoCompleteDropdown.displayName = 'GeistAutoCompleteDropdown'
 export default AutoCompleteDropdown

@@ -61,7 +61,7 @@ const ButtonComponent = React.forwardRef<
     const [dripX, setDripX] = useState<number>(0)
     const [dripY, setDripY] = useState<number>(0)
     const groupConfig = useButtonGroupContext()
-    const filteredProps = filterPropsWithGroup(btnProps, groupConfig)
+    const filteredProps = filterPropsWithGroup({...defaultProps, ...btnProps}, groupConfig)
     /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
@@ -219,7 +219,7 @@ const ButtonComponent = React.forwardRef<
   },
 )
 
-ButtonComponent.defaultProps = defaultProps
+// ButtonComponent.defaultProps = defaultProps
 ButtonComponent.displayName = 'GeistButton'
 const Button = withScale(ButtonComponent)
 export default Button

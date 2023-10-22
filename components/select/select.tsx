@@ -65,22 +65,22 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
   (
     {
       children,
-      type,
-      disabled,
+      type = defaultProps.type,
+      disabled = defaultProps.disabled,
       initialValue: init,
       value: customValue,
-      icon: Icon,
+      icon: Icon = defaultProps.icon,
       onChange,
-      pure,
-      multiple,
-      clearable,
+      pure = defaultProps.pure,
+      multiple = defaultProps.multiple,
+      clearable = defaultProps.clearable,
       placeholder,
-      className,
+      className = defaultProps.className,
       dropdownClassName,
       dropdownStyle,
-      disableMatchWidth,
+      disableMatchWidth = defaultProps.disableMatchWidth,
       getPopupContainer,
-      onDropdownVisibleChange,
+      onDropdownVisibleChange = defaultProps.onDropdownVisibleChange,
       ...props
     }: React.PropsWithChildren<SelectProps> & typeof defaultProps,
     selectRef,
@@ -324,7 +324,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
   },
 )
 
-SelectComponent.defaultProps = defaultProps
+// SelectComponent.defaultProps = defaultProps
 SelectComponent.displayName = 'GeistSelect'
 const Select = withScale(SelectComponent)
 export default Select

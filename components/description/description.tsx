@@ -19,9 +19,9 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DescriptionProps = Props & NativeAttrs
 
 const DescriptionComponent: React.FC<DescriptionProps> = ({
-  title,
-  content,
-  className,
+  title = 'Title',
+  content = '',
+  className = '',
   ...props
 }: DescriptionProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -70,7 +70,7 @@ const DescriptionComponent: React.FC<DescriptionProps> = ({
   )
 }
 
-DescriptionComponent.defaultProps = defaultProps
+// DescriptionComponent.defaultProps = defaultProps
 DescriptionComponent.displayName = 'GeistDescription'
 const Description = withScale(DescriptionComponent)
 export default Description

@@ -17,7 +17,7 @@ export type AvatarGroupProps = Props & NativeAttrs
 
 const AvatarGroupComponent: React.FC<React.PropsWithChildren<AvatarGroupProps>> = ({
   count,
-  className,
+  className = '',
   children,
 }: AvatarGroupProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -53,7 +53,7 @@ const AvatarGroupComponent: React.FC<React.PropsWithChildren<AvatarGroupProps>> 
   )
 }
 
-AvatarGroupComponent.defaultProps = defaultProps
+// AvatarGroupComponent.defaultProps = defaultProps
 AvatarGroupComponent.displayName = 'GeistAvatarGroup'
 const AvatarGroup = withScale(AvatarGroupComponent)
 export default AvatarGroup

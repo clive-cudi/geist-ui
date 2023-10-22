@@ -30,9 +30,9 @@ const getColor = (type: DotTypes, theme: GeistUIThemes): string => {
 }
 
 const DotComponent: React.FC<React.PropsWithChildren<DotProps>> = ({
-  type,
+  type = defaultProps.type,
   children,
-  className,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<DotProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -73,7 +73,7 @@ const DotComponent: React.FC<React.PropsWithChildren<DotProps>> = ({
   )
 }
 
-DotComponent.defaultProps = defaultProps
+// DotComponent.defaultProps = defaultProps
 DotComponent.displayName = 'GeistDot'
 const Dot = withScale(DotComponent)
 export default Dot

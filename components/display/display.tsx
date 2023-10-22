@@ -20,9 +20,9 @@ export type DisplayProps = Props & NativeAttrs
 
 const DisplayComponent: React.FC<React.PropsWithChildren<DisplayProps>> = ({
   children,
-  caption,
-  shadow,
-  className,
+  caption = '',
+  shadow = false,
+  className = '',
   ...props
 }: React.PropsWithChildren<DisplayProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -79,7 +79,7 @@ const DisplayComponent: React.FC<React.PropsWithChildren<DisplayProps>> = ({
   )
 }
 
-DisplayComponent.defaultProps = defaultProps
+// DisplayComponent.defaultProps = defaultProps
 DisplayComponent.displayName = 'GeistDisplay'
 const Display = withScale(DisplayComponent)
 export default Display

@@ -18,8 +18,8 @@ export type CardFooterProps = Props & NativeAttrs
 
 const CardFooterComponent: React.FC<React.PropsWithChildren<CardFooterProps>> = ({
   children,
-  className,
-  disableAutoMargin,
+  className = '',
+  disableAutoMargin = false,
   ...props
 }: CardFooterProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -57,7 +57,7 @@ const CardFooterComponent: React.FC<React.PropsWithChildren<CardFooterProps>> = 
   )
 }
 
-CardFooterComponent.defaultProps = defaultProps
+// CardFooterComponent.defaultProps = defaultProps
 CardFooterComponent.displayName = 'GeistCardFooter'
 const CardFooter = withScale(CardFooterComponent)
 export default CardFooter

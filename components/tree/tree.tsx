@@ -63,9 +63,9 @@ const makeChildren = (value: Array<TreeFile> = []) => {
 const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
   children,
   onClick,
-  initialExpand,
+  initialExpand = defaultProps.initialExpand,
   value,
-  className,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<TreeProps> & typeof defaultProps) => {
   const isImperative = Boolean(value && value.length > 0)
@@ -100,6 +100,6 @@ const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
   )
 }
 
-Tree.defaultProps = defaultProps
+// Tree.defaultProps = defaultProps
 Tree.displayName = 'GeistTree'
 export default Tree

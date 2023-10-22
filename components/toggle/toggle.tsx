@@ -41,12 +41,12 @@ export type ToggleSize = {
 }
 
 const ToggleComponent: React.FC<ToggleProps> = ({
-  initialChecked,
+  initialChecked = defaultProps.initialChecked,
   checked,
-  disabled,
+  disabled = defaultProps.disabled,
   onChange,
-  type,
-  className,
+  type = defaultProps.type,
+  className = defaultProps.className,
   ...props
 }: ToggleProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -173,7 +173,7 @@ const ToggleComponent: React.FC<ToggleProps> = ({
   )
 }
 
-ToggleComponent.defaultProps = defaultProps
+// ToggleComponent.defaultProps = defaultProps
 ToggleComponent.displayName = 'GeistToggle'
 const Toggle = withScale(ToggleComponent)
 export default Toggle

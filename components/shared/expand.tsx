@@ -13,8 +13,8 @@ const defaultProps = {
 }
 
 const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
-  isExpanded,
-  delay,
+  isExpanded = defaultProps.isExpanded,
+  delay = defaultProps.delay,
   children,
 }: React.PropsWithChildren<ExpandProps> & typeof defaultProps) => {
   const [height, setHeight] = useState<string>(isExpanded ? 'auto' : '0')
@@ -89,6 +89,6 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
   )
 }
 
-Expand.defaultProps = defaultProps
+// Expand.defaultProps = defaultProps
 Expand.displayName = 'GeistExpand'
 export default Expand

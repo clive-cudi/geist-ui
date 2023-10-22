@@ -28,12 +28,12 @@ export type SelectOptionProps = Props & NativeAttrs
 
 const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   value: identValue,
-  className,
+  className = defaultProps.className,
   children,
-  disabled,
-  divider,
-  label,
-  preventAllEvents,
+  disabled = defaultProps.disabled,
+  divider = defaultProps.divider,
+  label = defaultProps.label,
+  preventAllEvents = defaultProps.preventAllEvents,
   ...props
 }: React.PropsWithChildren<SelectOptionProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -132,7 +132,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
   )
 }
 
-SelectOptionComponent.defaultProps = defaultProps
+// SelectOptionComponent.defaultProps = defaultProps
 SelectOptionComponent.displayName = 'GeistSelectOption'
 const SelectOption = withScale(SelectOptionComponent)
 export default SelectOption

@@ -12,7 +12,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<HTMLDivElement>, keyof Props>
 export type FieldsetSubtitleProps = Props & NativeAttrs
 
 const FieldsetSubtitle: React.FC<React.PropsWithChildren<FieldsetSubtitleProps>> = ({
-  className,
+  className = defaultProps.className,
   children,
   ...props
 }: React.PropsWithChildren<FieldsetSubtitleProps> & typeof defaultProps) => {
@@ -33,6 +33,6 @@ const FieldsetSubtitle: React.FC<React.PropsWithChildren<FieldsetSubtitleProps>>
   )
 }
 
-FieldsetSubtitle.defaultProps = defaultProps
+// FieldsetSubtitle.defaultProps = defaultProps
 FieldsetSubtitle.displayName = 'GeistFieldsetSubtitle'
 export default FieldsetSubtitle

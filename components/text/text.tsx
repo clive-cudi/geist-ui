@@ -56,22 +56,23 @@ const getModifierChild = (tags: TextRenderableElements, children: ReactNode) => 
 }
 
 const TextComponent: React.FC<React.PropsWithChildren<TextProps>> = ({
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  b,
-  small,
-  i,
-  span,
-  del,
-  em,
-  blockquote,
+  h1 = defaultProps.h1,
+  h2 = defaultProps.h2,
+  h3 = defaultProps.h3,
+  h4 = defaultProps.h4,
+  h5 = defaultProps.h5,
+  h6 = defaultProps.h6,
+  p = defaultProps.p,
+  b = defaultProps.b,
+  small = defaultProps.small,
+  i = defaultProps.i,
+  span = defaultProps.span,
+  del = defaultProps.del,
+  em = defaultProps.em,
+  blockquote = defaultProps.blockquote,
   children,
-  className,
+  className = defaultProps.className,
+  type = defaultProps.type,
   ...props
 }: React.PropsWithChildren<TextProps> & typeof defaultProps) => {
   const elements: ElementMap = { h1, h2, h3, h4, h5, h6, p, blockquote }
@@ -115,7 +116,7 @@ const TextComponent: React.FC<React.PropsWithChildren<TextProps>> = ({
   )
 }
 
-TextComponent.defaultProps = defaultProps
+// TextComponent.defaultProps = defaultProps
 TextComponent.displayName = 'GeistText'
 const Text = withScale(TextComponent)
 export default Text

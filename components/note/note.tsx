@@ -48,10 +48,10 @@ const getStatusColor = (type: NoteTypes, filled: boolean, theme: GeistUIThemes) 
 
 export const NoteComponent: React.FC<React.PropsWithChildren<NoteProps>> = ({
   children,
-  type,
-  label,
-  filled,
-  className,
+  type = defaultProps.type,
+  label = defaultProps.label,
+  filled = defaultProps.filled,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<NoteProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -100,7 +100,7 @@ export const NoteComponent: React.FC<React.PropsWithChildren<NoteProps>> = ({
   )
 }
 
-NoteComponent.defaultProps = defaultProps
+// NoteComponent.defaultProps = defaultProps
 NoteComponent.displayName = 'GeistNote'
 const Note = withScale(NoteComponent)
 export default Note

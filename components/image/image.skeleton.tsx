@@ -12,7 +12,7 @@ const defaultProps = {
 export type ImageSkeletonProps = Props
 
 const ImageSkeleton: React.FC<ImageSkeletonProps> = React.memo(
-  ({ opacity, ...props }: ImageSkeletonProps & typeof defaultProps) => {
+  ({ opacity = defaultProps.opacity, ...props }: ImageSkeletonProps & typeof defaultProps) => {
     const theme = useTheme()
     return (
       <div className="skeleton" {...props}>
@@ -52,6 +52,6 @@ const ImageSkeleton: React.FC<ImageSkeletonProps> = React.memo(
   },
 )
 
-ImageSkeleton.defaultProps = defaultProps
+// ImageSkeleton.defaultProps = defaultProps
 ImageSkeleton.displayName = 'GeistImageSkeleton'
 export default ImageSkeleton

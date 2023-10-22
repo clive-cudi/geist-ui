@@ -24,9 +24,9 @@ const SliderDot = React.forwardRef<
   (
     {
       children,
-      disabled,
-      left,
-      isClick,
+      disabled = defaultProps.disabled,
+      left = defaultProps.left,
+      isClick = defaultProps.isClick,
     }: React.PropsWithChildren<SliderDotProps> & typeof defaultProps,
     ref: React.Ref<HTMLDivElement>,
   ) => {
@@ -79,6 +79,6 @@ const SliderDot = React.forwardRef<
   },
 )
 
-SliderDot.defaultProps = defaultProps
+// SliderDot.defaultProps = defaultProps
 SliderDot.displayName = 'GeistSliderDot'
 export default SliderDot

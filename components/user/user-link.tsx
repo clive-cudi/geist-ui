@@ -20,7 +20,7 @@ const UserLink = React.forwardRef<
   (
     {
       href,
-      className,
+      className = defaultProps.className,
       children,
       ...props
     }: React.PropsWithChildren<UserLinkProps> & typeof defaultProps,
@@ -41,6 +41,6 @@ const UserLink = React.forwardRef<
   },
 )
 
-UserLink.defaultProps = defaultProps
+// UserLink.defaultProps = defaultProps
 UserLink.displayName = 'GeistUserLink'
 export default UserLink

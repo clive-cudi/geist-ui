@@ -20,7 +20,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type FieldsetGroupProps = Props & NativeAttrs
 
 const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = ({
-  className,
+  className = defaultProps.className,
   children,
   value,
   onChange,
@@ -141,7 +141,7 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
   )
 }
 
-FieldsetGroupComponent.defaultProps = defaultProps
+// FieldsetGroupComponent.defaultProps = defaultProps
 FieldsetGroupComponent.displayName = 'GeistFieldsetGroup'
 const FieldsetGroup = withScale(FieldsetGroupComponent)
 export default FieldsetGroup

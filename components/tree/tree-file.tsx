@@ -25,10 +25,10 @@ export type TreeFileProps = Props & NativeAttrs
 
 const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
   name,
-  parentPath,
-  level,
+  parentPath = defaultProps.parentPath,
+  level = defaultProps.level,
   extra,
-  className,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<TreeFileProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -106,6 +106,6 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
   )
 }
 
-TreeFile.defaultProps = defaultProps
+// TreeFile.defaultProps = defaultProps
 TreeFile.displayName = 'GeistTreeFile'
 export default TreeFile

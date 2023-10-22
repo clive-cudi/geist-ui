@@ -33,8 +33,8 @@ export type TextChildProps = Props & NativeAttrs
 const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
   children,
   tag,
-  className,
-  type,
+  className = defaultProps.className,
+  type = defaultProps.type,
   ...props
 }: React.PropsWithChildren<TextChildProps> & typeof defaultProps) => {
   const Component = tag
@@ -94,6 +94,6 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
   )
 }
 
-TextChild.defaultProps = defaultProps
+// TextChild.defaultProps = defaultProps
 TextChild.displayName = 'GeistTextChild'
 export default TextChild

@@ -2,19 +2,13 @@
 
 exports[`Tree should mount correctly 1`] = `
 <GeistTreeFile
-  className=""
-  level={0}
   name="package.json"
-  parentPath=""
 />
 `;
 
 exports[`Tree should mount correctly 2`] = `
 <GeistTreeFolder
-  className=""
-  level={0}
   name="components"
-  parentPath=""
 />
 `;
 

@@ -23,9 +23,9 @@ export type ImageProps = Props & NativeAttrs
 
 const ImageComponent: React.FC<ImageProps> = ({
   src,
-  disableSkeleton,
-  className,
-  maxDelay,
+  disableSkeleton = defaultProps.disableSkeleton,
+  className = defaultProps.className,
+  maxDelay = defaultProps.maxDelay,
   ...props
 }: ImageProps & typeof defaultProps) => {
   const { SCALES, getScaleProps } = useScale()
@@ -91,7 +91,7 @@ const ImageComponent: React.FC<ImageProps> = ({
   )
 }
 
-ImageComponent.defaultProps = defaultProps
+// ImageComponent.defaultProps = defaultProps
 ImageComponent.displayName = 'GeistImage'
 const Image = withScale(ImageComponent)
 export default Image

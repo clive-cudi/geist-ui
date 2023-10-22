@@ -14,7 +14,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>
 export type ModalContentProps = Props & NativeAttrs
 
 const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps>> = ({
-  className,
+  className = defaultProps.className,
   children,
   ...props
 }: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => {
@@ -52,7 +52,7 @@ const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps>
   )
 }
 
-ModalContentComponent.defaultProps = defaultProps
+// ModalContentComponent.defaultProps = defaultProps
 ModalContentComponent.displayName = 'GeistModalContent'
 const ModalContent = withScale(ModalContentComponent)
 export default ModalContent

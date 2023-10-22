@@ -22,10 +22,10 @@ export type CodeProps = Props & NativeAttrs
 
 const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
   children,
-  block,
-  className,
-  name,
-  classic,
+  block = false,
+  className = '',
+  name = '',
+  classic = false,
   ...props
 }: React.PropsWithChildren<CodeProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -108,7 +108,7 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
   )
 }
 
-CodeComponent.defaultProps = defaultProps
+// CodeComponent.defaultProps = defaultProps
 CodeComponent.displayName = 'GeistCode'
 const Code = withScale(CodeComponent)
 export default Code

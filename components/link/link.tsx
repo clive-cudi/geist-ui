@@ -32,13 +32,13 @@ const LinkComponent = React.forwardRef<
 >(
   (
     {
-      href,
-      color,
-      underline,
+      href = defaultProps.href,
+      color = defaultProps.color,
+      underline = defaultProps.underline,
       children,
-      className,
-      block,
-      icon,
+      className = defaultProps.className,
+      block = defaultProps.block,
+      icon = defaultProps.icon,
       ...props
     }: React.PropsWithChildren<LinkProps> & typeof defaultProps,
     ref: React.Ref<HTMLAnchorElement>,
@@ -92,7 +92,7 @@ const LinkComponent = React.forwardRef<
   },
 )
 
-LinkComponent.defaultProps = defaultProps
+// LinkComponent.defaultProps = defaultProps
 LinkComponent.displayName = 'GeistLink'
 const Link = withScale(LinkComponent)
 export default Link

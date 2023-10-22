@@ -31,10 +31,10 @@ const safeText = (text: string): string => {
 
 const AvatarComponent: React.FC<AvatarProps> = ({
   src,
-  stacked,
-  text,
-  isSquare,
-  className,
+  stacked = false,
+  text = '',
+  isSquare = false,
+  className = '',
   ...props
 }: AvatarProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -95,7 +95,7 @@ const AvatarComponent: React.FC<AvatarProps> = ({
   )
 }
 
-AvatarComponent.defaultProps = defaultProps
+// AvatarComponent.defaultProps = defaultProps
 AvatarComponent.displayName = 'GeistAvatar'
 const Avatar = withScale(AvatarComponent)
 export default Avatar

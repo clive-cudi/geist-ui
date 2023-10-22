@@ -45,18 +45,18 @@ export type TooltipProps = Props & NativeAttrs
 
 const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   children,
-  initialVisible,
+  initialVisible = defaultProps.initialVisible,
   text,
-  offset,
-  placement,
-  portalClassName,
-  enterDelay,
-  leaveDelay,
-  trigger,
-  type,
-  className,
-  onVisibleChange,
-  hideArrow,
+  offset = defaultProps.offset,
+  placement = defaultProps.placement,
+  portalClassName = defaultProps.portalClassName,
+  enterDelay = defaultProps.enterDelay,
+  leaveDelay = defaultProps.leaveDelay,
+  trigger = defaultProps.trigger,
+  type = defaultProps.type,
+  className = defaultProps.className,
+  onVisibleChange = defaultProps.onVisibleChange,
+  hideArrow = defaultProps.hideArrow,
   visible: customVisible,
   ...props
 }: React.PropsWithChildren<TooltipProps> & typeof defaultProps) => {
@@ -130,7 +130,7 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   )
 }
 
-TooltipComponent.defaultProps = defaultProps
+// TooltipComponent.defaultProps = defaultProps
 TooltipComponent.displayName = 'GeistTooltip'
 const Tooltip = withScale(TooltipComponent)
 export default Tooltip

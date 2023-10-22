@@ -31,11 +31,11 @@ const ModalActionComponent = React.forwardRef<
 >(
   (
     {
-      className,
+      className = defaultProps.className,
       children,
       onClick,
-      passive,
-      disabled,
+      passive = defaultProps.passive,
+      disabled = defaultProps.disabled,
       ...props
     }: React.PropsWithChildren<ModalActionProps> & typeof defaultProps,
     ref: React.Ref<HTMLButtonElement | null>,
@@ -105,7 +105,7 @@ const ModalActionComponent = React.forwardRef<
   },
 )
 
-ModalActionComponent.defaultProps = defaultProps
+// ModalActionComponent.defaultProps = defaultProps
 ModalActionComponent.displayName = 'GeistModalAction'
 const ModalAction = withScale(ModalActionComponent)
 export default ModalAction

@@ -30,10 +30,10 @@ export type TreeFolderProps = Props & NativeAttrs
 const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
   name,
   children,
-  parentPath,
-  level: parentLevel,
+  parentPath = defaultProps.parentPath,
+  level: parentLevel = defaultProps.level,
   extra,
-  className,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<TreeFolderProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -155,6 +155,6 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
   )
 }
 
-TreeFolder.defaultProps = defaultProps
+// TreeFolder.defaultProps = defaultProps
 TreeFolder.displayName = 'GeistTreeFolder'
 export default TreeFolder

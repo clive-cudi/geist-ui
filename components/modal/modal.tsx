@@ -39,13 +39,13 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
   visible: customVisible,
   onClose,
   children,
-  keyboard,
-  wrapClassName,
+  keyboard = defaultProps.keyboard,
+  wrapClassName = defaultProps.wrapClassName,
   onContentClick,
-  disableBackdropClick,
-  positionClassName,
-  backdropClassName,
-  layerClassName,
+  disableBackdropClick = defaultProps.disableBackdropClick,
+  positionClassName = defaultProps.positionClassName,
+  backdropClassName = defaultProps.backdropClassName,
+  layerClassName = defaultProps.layerClassName,
 }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => {
   const portal = usePortal('modal')
   const { SCALES } = useScale()
@@ -109,7 +109,7 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
   )
 }
 
-ModalComponent.defaultProps = defaultProps
+// ModalComponent.defaultProps = defaultProps
 ModalComponent.displayName = 'GeistModal'
 const Modal = withScale(ModalComponent)
 export default Modal

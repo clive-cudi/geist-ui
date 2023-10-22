@@ -28,10 +28,10 @@ const BreadcrumbsItem = React.forwardRef<
   (
     {
       href,
-      nextLink,
+      nextLink = defaultProps.nextLink,
       onClick,
       children,
-      className,
+      className = defaultProps.className,
       ...props
     }: BreadcrumbsItemProps & typeof defaultProps,
     ref: React.Ref<HTMLAnchorElement>,
@@ -60,6 +60,6 @@ const BreadcrumbsItem = React.forwardRef<
   },
 )
 
-BreadcrumbsItem.defaultProps = defaultProps
+// BreadcrumbsItem.defaultProps = defaultProps
 BreadcrumbsItem.displayName = 'GeistBreadcrumbsItem'
 export default BreadcrumbsItem

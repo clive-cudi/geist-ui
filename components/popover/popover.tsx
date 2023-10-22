@@ -46,13 +46,19 @@ export type PopoverProps = Props & Omit<TooltipProps, keyof ExcludeTooltipProps>
 const PopoverComponent: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   content,
   children,
-  trigger,
-  placement,
-  initialVisible,
-  portalClassName,
-  disableItemsAutoClose,
-  onVisibleChange,
+  trigger = defaultProps.trigger,
+  placement = defaultProps.placement,
+  initialVisible = defaultProps.initialVisible,
+  portalClassName = defaultProps.portalClassName,
+  disableItemsAutoClose = defaultProps.disableItemsAutoClose,
+  onVisibleChange = defaultProps.onVisibleChange,
   visible: customVisible,
+  hideArrow = defaultProps.hideArrow,
+  type = defaultProps.type,
+  enterDelay = defaultProps.enterDelay,
+  leaveDelay = defaultProps.leaveDelay,
+  offset = defaultProps.offset,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<PopoverProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -100,7 +106,7 @@ const PopoverComponent: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   )
 }
 
-PopoverComponent.defaultProps = defaultProps
+// PopoverComponent.defaultProps = defaultProps
 PopoverComponent.displayName = 'GeistPopover'
 const Popover = withScale(PopoverComponent)
 export default Popover

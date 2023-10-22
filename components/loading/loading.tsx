@@ -40,10 +40,10 @@ const getIconBgColor = (
 
 const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   children,
-  type,
+  type = defaultProps.type,
   color,
-  className,
-  spaceRatio,
+  className = defaultProps.className,
+  spaceRatio = defaultProps.spaceRatio,
   ...props
 }: React.PropsWithChildren<LoadingProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -135,7 +135,7 @@ const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   )
 }
 
-LoadingComponent.defaultProps = defaultProps
+// LoadingComponent.defaultProps = defaultProps
 LoadingComponent.displayName = 'GeistLoading'
 const Loading = withScale(LoadingComponent)
 export default Loading

@@ -47,14 +47,14 @@ const getColor = (type: RatingTypes, palette: GeistUIThemesPalette): string => {
 }
 
 const RatingComponent: React.FC<RatingProps> = ({
-  type,
-  className,
-  icon,
-  count,
+  type = defaultProps.type,
+  className = defaultProps.className,
+  icon = defaultProps.icon,
+  count = defaultProps.count,
   value: customValue,
-  initialValue,
+  initialValue = defaultProps.initialValue,
   onValueChange,
-  locked,
+  locked = defaultProps.locked,
   onLockedChange,
   ...props
 }: React.PropsWithChildren<RatingProps> & typeof defaultProps) => {
@@ -137,7 +137,7 @@ const RatingComponent: React.FC<RatingProps> = ({
   )
 }
 
-RatingComponent.defaultProps = defaultProps
+// RatingComponent.defaultProps = defaultProps
 RatingComponent.displayName = 'GeistRating'
 const Rating = withScale(RatingComponent)
 export default Rating

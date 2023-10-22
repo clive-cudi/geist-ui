@@ -17,8 +17,8 @@ export type PageHeaderProps = Props & NativeAttrs
 
 const PageHeaderComponent: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
   children,
-  center,
-  className,
+  center = defaultProps.center,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<PageHeaderProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -46,7 +46,7 @@ const PageHeaderComponent: React.FC<React.PropsWithChildren<PageHeaderProps>> = 
   )
 }
 
-PageHeaderComponent.defaultProps = defaultProps
+// PageHeaderComponent.defaultProps = defaultProps
 PageHeaderComponent.displayName = 'GeistPageHeader'
 const PageHeader = withScale(PageHeaderComponent)
 export default PageHeader

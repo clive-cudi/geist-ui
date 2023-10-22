@@ -15,15 +15,16 @@ interface Props {
 const defaultProps = {
   className: '',
   visible: false,
+  placement: 'left' as DrawerPlacement
 }
 
 export type DrawerWrapperProps = Props
 
 const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
-  className,
+  className = defaultProps.className,
   children,
-  visible,
-  placement,
+  visible = defaultProps.visible,
+  placement = defaultProps.placement,
   ...props
 }: React.PropsWithChildren<DrawerWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -88,7 +89,7 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
             box-shadow: ${theme.expressiveness.shadowLarge};
             opacity: 0;
             outline: none;
-            transform: ${transform.initial};
+            transform: ${transform?.initial};
             transition: opacity, transform 400ms cubic-bezier(0.1, 0.6, 0.1, 1);
             font-size: ${SCALES.font(1)};
             --modal-wrapper-padding-left: ${SCALES.pl(1.3125)};
@@ -157,6 +158,6 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   )
 }
 
-DrawerWrapper.defaultProps = defaultProps
+// DrawerWrapper.defaultProps = defaultProps
 DrawerWrapper.displayName = 'GeistDrawerWrapper'
 export default DrawerWrapper

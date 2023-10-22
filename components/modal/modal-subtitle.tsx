@@ -14,7 +14,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type ModalSubtitleProps = Props & NativeAttrs
 
 const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProps>> = ({
-  className,
+  className = defaultProps.className,
   children,
   ...props
 }: React.PropsWithChildren<ModalSubtitleProps> & typeof defaultProps) => {
@@ -46,7 +46,7 @@ const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProp
   )
 }
 
-ModalSubtitleComponent.defaultProps = defaultProps
+// ModalSubtitleComponent.defaultProps = defaultProps
 ModalSubtitleComponent.displayName = 'GeistModalSubtitle'
 const ModalSubtitle = withScale(ModalSubtitleComponent)
 export default ModalSubtitle

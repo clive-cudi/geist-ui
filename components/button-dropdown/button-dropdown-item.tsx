@@ -26,10 +26,10 @@ export type ButtonDropdownItemProps = Props & NativeAttrs
 
 const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemProps>> = ({
   children,
-  onClick,
-  className,
-  main,
-  type: selfType,
+  onClick = defaultProps.onClick,
+  className = defaultProps.className,
+  main = defaultProps.main,
+  type: selfType = defaultProps.type,
   ...props
 }: ButtonDropdownItemProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -82,6 +82,6 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
   )
 }
 
-ButtonDropdownItem.defaultProps = defaultProps
+// ButtonDropdownItem.defaultProps = defaultProps
 ButtonDropdownItem.displayName = 'GeistButtonDropdownItem'
 export default ButtonDropdownItem

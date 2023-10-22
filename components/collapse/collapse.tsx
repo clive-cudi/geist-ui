@@ -30,9 +30,9 @@ const CollapseComponent: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   children,
   title,
   subtitle,
-  initialVisible,
-  shadow,
-  className,
+  initialVisible = false,
+  shadow = false,
+  className = '',
   index,
   ...props
 }: React.PropsWithChildren<CollapseProps> & typeof defaultProps) => {
@@ -137,7 +137,7 @@ const CollapseComponent: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   )
 }
 
-CollapseComponent.defaultProps = defaultProps
+// CollapseComponent.defaultProps = defaultProps
 CollapseComponent.displayName = 'GeistCollapse'
 const Collapse = withScale(CollapseComponent)
 export default Collapse

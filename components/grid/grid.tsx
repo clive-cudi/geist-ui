@@ -16,7 +16,7 @@ export type GridProps = Props & GridBasicItemProps
 
 const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
   children,
-  className,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<GridProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -39,7 +39,7 @@ const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
   )
 }
 
-GridComponent.defaultProps = defaultProps
+// GridComponent.defaultProps = defaultProps
 GridComponent.displayName = 'GeistGrid'
 const Grid = withScale(GridComponent)
 export default Grid

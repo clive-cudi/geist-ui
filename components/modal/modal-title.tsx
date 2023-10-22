@@ -14,7 +14,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ModalTitleProps = Props & NativeAttrs
 
 const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps>> = ({
-  className,
+  className = defaultProps.className,
   children,
   ...props
 }: React.PropsWithChildren<ModalTitleProps> & typeof defaultProps) => {
@@ -49,7 +49,7 @@ const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps>> = 
   )
 }
 
-ModalTitleComponent.defaultProps = defaultProps
+// ModalTitleComponent.defaultProps = defaultProps
 ModalTitleComponent.displayName = 'GeistModalTitle'
 const ModalTitle = withScale(ModalTitleComponent)
 export default ModalTitle

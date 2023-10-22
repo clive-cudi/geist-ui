@@ -31,12 +31,12 @@ type NativeAttrs = Omit<React.FieldsetHTMLAttributes<any>, keyof Props>
 export type FieldsetProps = Props & NativeAttrs
 
 const FieldsetComponent: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
-  className,
-  title,
-  subtitle,
+  className = defaultProps.className,
+  title = defaultProps.title,
+  subtitle = defaultProps.subtitle,
   children,
-  value,
-  label,
+  value = defaultProps.value,
+  label = defaultProps.label,
   ...props
 }: React.PropsWithChildren<FieldsetProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -104,7 +104,7 @@ const FieldsetComponent: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
   )
 }
 
-FieldsetComponent.defaultProps = defaultProps
+// FieldsetComponent.defaultProps = defaultProps
 FieldsetComponent.displayName = 'GeistFieldset'
 const Fieldset = withScale(FieldsetComponent)
 export default Fieldset

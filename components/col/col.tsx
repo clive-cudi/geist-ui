@@ -18,11 +18,11 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ColProps = Props & NativeAttrs
 
 const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
-  component,
+  component = 'div',
   children,
-  span,
-  offset,
-  className,
+  span = 24,
+  offset = 0,
+  className = '',
   ...props
 }: React.PropsWithChildren<ColProps> & typeof defaultProps) => {
   const Component = component
@@ -44,6 +44,6 @@ const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
   )
 }
 
-Col.defaultProps = defaultProps
+// Col.defaultProps = defaultProps
 Col.displayName = 'GeistCol'
 export default Col
