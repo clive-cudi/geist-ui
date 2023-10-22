@@ -99,6 +99,7 @@ function TableComponent<TableDataItem extends TableDataItemBase>(
           onRow={onRow}
           onCell={onCell}
           rowClassName={rowClassName}
+          className=''
         />
         {children}
 
