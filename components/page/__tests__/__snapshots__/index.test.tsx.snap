@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Page should render correctly 1`] = `
-"<section><main class=\\"\\">test-value<style>
+"<section class=\\"\\"><main class=\\"\\">test-value<style>
         main {
           font-size: calc(1 * 16px);
           width: 100%;
@@ -26,7 +26,7 @@ exports[`Page should render correctly 1`] = `
 `;
 
 exports[`Page should work correctly with dot configs 1`] = `
-"<section><main class=\\"\\"><style>
+"<section class=\\"\\"><main class=\\"\\"><style>
         main {
           font-size: calc(1 * 16px);
           width: 100%;

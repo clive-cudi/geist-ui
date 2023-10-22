@@ -15,6 +15,7 @@ interface Props {
 const defaultProps = {
   className: '',
   visible: false,
+  placement: 'left' as DrawerPlacement
 }
 
 export type DrawerWrapperProps = Props
@@ -23,7 +24,7 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   className = defaultProps.className,
   children,
   visible = defaultProps.visible,
-  placement,
+  placement = defaultProps.placement,
   ...props
 }: React.PropsWithChildren<DrawerWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -88,7 +89,7 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
             box-shadow: ${theme.expressiveness.shadowLarge};
             opacity: 0;
             outline: none;
-            transform: ${transform.initial};
+            transform: ${transform?.initial};
             transition: opacity, transform 400ms cubic-bezier(0.1, 0.6, 0.1, 1);
             font-size: ${SCALES.font(1)};
             --modal-wrapper-padding-left: ${SCALES.pl(1.3125)};

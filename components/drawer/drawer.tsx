@@ -22,7 +22,7 @@ const defaultProps = {
   wrapClassName: '',
   keyboard: true,
   disableBackdropClick: false,
-  placement: 'right' as DrawerPlacement,
+  placement: 'left' as DrawerPlacement,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
