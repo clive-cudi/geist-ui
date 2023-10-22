@@ -21,6 +21,7 @@ const defaultProps = {
   dotBackdrop: false,
   dotSize: '1px' as CSSProperties['fontSize'],
   dotSpace: 1,
+  className: ''
 }
 
 export type DotStylesProps = {
@@ -56,11 +57,11 @@ export type PageProps = Props & NativeAttrs
 
 const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
   children,
-  render,
-  dotBackdrop,
-  className,
-  dotSize,
-  dotSpace,
+  render = defaultProps.render,
+  dotBackdrop = defaultProps.dotBackdrop,
+  className = defaultProps.className,
+  dotSize = defaultProps.dotSize,
+  dotSpace = defaultProps.dotSpace,
   ...props
 }: React.PropsWithChildren<PageProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -115,7 +116,7 @@ const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
   )
 }
 
-PageComponent.defaultProps = defaultProps
+// PageComponent.defaultProps = defaultProps
 PageComponent.displayName = 'GeistPage'
 const Page = withScale(PageComponent)
 export default Page

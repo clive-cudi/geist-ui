@@ -15,8 +15,8 @@ const defaultProps = {
 export type ButtonDrip = Props
 
 const ButtonDrip: React.FC<ButtonDrip> = ({
-  x,
-  y,
+  x = defaultProps.x,
+  y = defaultProps.y,
   color,
   onCompleted,
 }: ButtonDrip & typeof defaultProps) => {
@@ -85,6 +85,6 @@ const ButtonDrip: React.FC<ButtonDrip> = ({
   )
 }
 
-ButtonDrip.defaultProps = defaultProps
+// ButtonDrip.defaultProps = defaultProps
 ButtonDrip.displayName = 'GeistButtonDrip'
 export default ButtonDrip

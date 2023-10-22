@@ -15,7 +15,7 @@ export type BreadcrumbsSeparatorProps = Props & NativeAttrs
 
 const Separator: React.FC<React.PropsWithChildren<BreadcrumbsSeparatorProps>> = ({
   children,
-  className,
+  className = defaultProps.className,
 }: BreadcrumbsSeparatorProps & typeof defaultProps) => {
   const { SCALES } = useScale()
   const classes = useClasses('separator', className)
@@ -39,7 +39,7 @@ const Separator: React.FC<React.PropsWithChildren<BreadcrumbsSeparatorProps>> = 
   )
 }
 
-Separator.defaultProps = defaultProps
+// Separator.defaultProps = defaultProps
 Separator.displayName = 'GeistBreadcrumbsSeparator'
 const BreadcrumbsSeparator = withScale(Separator)
 export default BreadcrumbsSeparator

@@ -36,10 +36,10 @@ const getColor = (type: DividerTypes, palette: GeistUIThemesPalette) => {
 }
 
 const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
-  type,
-  align,
+  type = 'default',
+  align = 'center',
   children,
-  className,
+  className = '',
   ...props
 }: React.PropsWithChildren<DividerProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -102,7 +102,7 @@ const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
   )
 }
 
-DividerComponent.defaultProps = defaultProps
+// DividerComponent.defaultProps = defaultProps
 DividerComponent.displayName = 'GeistDivider'
 const Divider = withScale(DividerComponent)
 export default Divider

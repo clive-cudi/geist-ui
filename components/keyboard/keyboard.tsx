@@ -22,12 +22,12 @@ type NativeAttrs = Omit<React.KeygenHTMLAttributes<any>, keyof Props>
 export type KeyboardProps = Props & NativeAttrs
 
 const KeyboardComponent: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
-  command,
-  shift,
-  option,
-  ctrl,
+  command = defaultProps.command,
+  shift = defaultProps.shift,
+  option = defaultProps.option,
+  ctrl = defaultProps.ctrl,
   children,
-  className,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<KeyboardProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -74,7 +74,7 @@ const KeyboardComponent: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
   )
 }
 
-KeyboardComponent.defaultProps = defaultProps
+// KeyboardComponent.defaultProps = defaultProps
 KeyboardComponent.displayName = 'GeistKeyboard'
 const Keyboard = withScale(KeyboardComponent)
 export default Keyboard

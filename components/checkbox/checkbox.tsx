@@ -42,13 +42,13 @@ export type CheckboxProps = Props & NativeAttrs
 
 const CheckboxComponent: React.FC<CheckboxProps> = ({
   checked,
-  initialChecked,
-  disabled,
+  initialChecked = false,
+  disabled = false,
   onChange,
-  className,
+  className = '',
   children,
-  type,
-  value,
+  type = 'default',
+  value = '',
   ...props
 }: CheckboxProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -154,7 +154,7 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
   )
 }
 
-CheckboxComponent.defaultProps = defaultProps
+// CheckboxComponent.defaultProps = defaultProps
 CheckboxComponent.displayName = 'GeistCheckbox'
 const Checkbox = withScale(CheckboxComponent)
 export default Checkbox

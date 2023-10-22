@@ -16,7 +16,7 @@ export type FieldsetContentProps = Props & NativeAttrs
 const FieldsetContentComponent: React.FC<
   React.PropsWithChildren<FieldsetContentProps>
 > = ({
-  className,
+  className = defaultProps.className,
   children,
   ...props
 }: React.PropsWithChildren<FieldsetContentProps> & typeof defaultProps) => {
@@ -44,7 +44,7 @@ const FieldsetContentComponent: React.FC<
   )
 }
 
-FieldsetContentComponent.defaultProps = defaultProps
+// FieldsetContentComponent.defaultProps = defaultProps
 FieldsetContentComponent.displayName = 'GeistFieldsetContent'
 const FieldsetContent = withScale(FieldsetContentComponent)
 export default FieldsetContent

@@ -15,8 +15,8 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type SpacerProps = Props & NativeAttrs
 
 const SpacerComponent: React.FC<SpacerProps> = ({
-  inline,
-  className,
+  inline = defaultProps.inline,
+  className = defaultProps.className,
   ...props
 }: SpacerProps & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -36,7 +36,7 @@ const SpacerComponent: React.FC<SpacerProps> = ({
   )
 }
 
-SpacerComponent.defaultProps = defaultProps
+// SpacerComponent.defaultProps = defaultProps
 SpacerComponent.displayName = 'GeistSpacer'
 const Spacer = withScale(SpacerComponent)
 export default Spacer

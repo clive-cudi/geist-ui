@@ -29,10 +29,10 @@ const getColor = (val: number, palette: GeistUIThemesPalette): string => {
 }
 
 const CapacityComponent: React.FC<CapacityProps> = ({
-  value,
-  limit,
-  color: userColor,
-  className,
+  value = 0,
+  limit = 100,
+  color: userColor = '',
+  className = '',
   ...props
 }: CapacityProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -71,7 +71,7 @@ const CapacityComponent: React.FC<CapacityProps> = ({
   )
 }
 
-CapacityComponent.defaultProps = defaultProps
+// CapacityComponent.defaultProps = defaultProps
 CapacityComponent.displayName = 'GeistCapacity'
 const Capacity = withScale(CapacityComponent)
 export default Capacity

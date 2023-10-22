@@ -72,10 +72,10 @@ const getColors = (type: TagTypes, palette: GeistUIThemesPalette, invert: boolea
 }
 
 const TagComponent: React.FC<React.PropsWithChildren<TagProps>> = ({
-  type,
+  type = defaultProps.type,
   children,
-  className,
-  invert,
+  className = defaultProps.className,
+  invert = defaultProps.invert,
   ...props
 }: React.PropsWithChildren<TagProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -109,7 +109,7 @@ const TagComponent: React.FC<React.PropsWithChildren<TagProps>> = ({
   )
 }
 
-TagComponent.defaultProps = defaultProps
+// TagComponent.defaultProps = defaultProps
 TagComponent.displayName = 'GeistTag'
 const Tag = withScale(TagComponent)
 export default Tag

@@ -32,12 +32,12 @@ export type PaginationProps = Props & NativeAttrs
 
 const PaginationComponent: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   page: customPage,
-  initialPage,
-  count,
-  limit,
+  initialPage = defaultProps.initialPage,
+  count = defaultProps.count,
+  limit = defaultProps.limit,
   children,
   onChange,
-  className,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<PaginationProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -108,7 +108,7 @@ const PaginationComponent: React.FC<React.PropsWithChildren<PaginationProps>> = 
   )
 }
 
-PaginationComponent.defaultProps = defaultProps
+// PaginationComponent.defaultProps = defaultProps
 PaginationComponent.displayName = 'GeistPagination'
 const Pagination = withScale(PaginationComponent)
 export default Pagination

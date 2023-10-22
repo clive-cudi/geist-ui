@@ -24,8 +24,8 @@ const TableColumn = <TableDataItem extends TableDataItemBase>(
     prop,
     label,
     width,
-    className,
-    render: renderHandler,
+    className = defaultProps.className,
+    render: renderHandler = defaultProps.render,
   } = columnProps as React.PropsWithChildren<TableColumnProps<TableDataItem>> &
     typeof defaultProps
   const { updateColumn } = useTableContext<TableDataItem>()
@@ -47,6 +47,6 @@ const TableColumn = <TableDataItem extends TableDataItemBase>(
   return null
 }
 
-TableColumn.defaultProps = defaultProps
+// TableColumn.defaultProps = defaultProps
 TableColumn.displayName = 'GeistTableColumn'
 export default TableColumn

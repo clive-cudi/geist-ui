@@ -16,7 +16,7 @@ const AutoCompleteSearchComponent: React.FC<
   React.PropsWithChildren<AutoCompleteSearchProps>
 > = ({
   children,
-  className,
+  className = defaultProps.className,
 }: React.PropsWithChildren<AutoCompleteSearchProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScale()
@@ -51,7 +51,7 @@ const AutoCompleteSearchComponent: React.FC<
   )
 }
 
-AutoCompleteSearchComponent.defaultProps = defaultProps
+// AutoCompleteSearchComponent.defaultProps = defaultProps
 AutoCompleteSearchComponent.displayName = 'GeistAutoCompleteSearch'
 const AutoCompleteSearch = withScale(AutoCompleteSearchComponent)
 

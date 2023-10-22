@@ -41,15 +41,15 @@ const textArrayToString = (text: string[]): string => {
 }
 
 const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
-  type,
-  filled,
+  type = defaultProps.type,
+  filled = defaultProps.filled,
   children,
-  symbol,
-  toastText,
-  toastType,
+  symbol = defaultProps.symbol,
+  toastText = defaultProps.toastText,
+  toastType = defaultProps.toastType,
   text,
-  copy: copyType,
-  className,
+  copy: copyType = defaultProps.copy,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<SnippetProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -161,7 +161,7 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   )
 }
 
-SnippetComponent.defaultProps = defaultProps
+// SnippetComponent.defaultProps = defaultProps
 SnippetComponent.displayName = 'GeistSnippet'
 const Snippet = withScale(SnippetComponent)
 export default Snippet

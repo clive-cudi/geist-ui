@@ -28,8 +28,8 @@ const SelectDropdown = React.forwardRef<
     {
       visible,
       children,
-      className,
-      dropdownStyle,
+      className = defaultProps.className,
+      dropdownStyle = defaultProps.dropdownStyle,
       disableMatchWidth,
       getPopupContainer,
     }: React.PropsWithChildren<SelectDropdownProps> & typeof defaultProps,
@@ -71,6 +71,6 @@ const SelectDropdown = React.forwardRef<
   },
 )
 
-SelectDropdown.defaultProps = defaultProps
+// SelectDropdown.defaultProps = defaultProps
 SelectDropdown.displayName = 'GeistSelectDropdown'
 export default SelectDropdown

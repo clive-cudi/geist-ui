@@ -46,14 +46,14 @@ function TableComponent<TableDataItem extends TableDataItemBase>(
   const {
     children,
     data: customData,
-    initialData,
-    hover,
-    emptyText,
+    initialData = defaultProps.initialData,
+    hover = defaultProps.hover,
+    emptyText = defaultProps.emptyText,
     onRow,
     onCell,
     onChange,
-    className,
-    rowClassName,
+    className = defaultProps.className,
+    rowClassName = defaultProps.rowClassName,
     ...props
   } = tableProps as React.PropsWithChildren<TableProps<TableDataItem>> &
     typeof defaultProps
@@ -119,7 +119,7 @@ function TableComponent<TableDataItem extends TableDataItemBase>(
   )
 }
 
-TableComponent.defaultProps = defaultProps
+// TableComponent.defaultProps = defaultProps
 TableComponent.displayName = 'GeistTable'
 TableComponent.Column = TableColumn
 let Table = withScale(TableComponent) as any

@@ -61,7 +61,8 @@ const getTransform = (placement: BadgeAnchorPlacement): TransformStyles => {
 
 const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
   children,
-  placement,
+  className = defaultProps.className,
+  placement = defaultProps.placement,
 }: BadgeAnchorProps & typeof defaultProps) => {
   const [withoutBadgeChildren, badgeChldren] = pickChild(children, Badge)
   const { top, bottom, left, right, value, origin } = useMemo(
@@ -70,7 +71,7 @@ const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
   )
 
   return (
-    <div className="anchor">
+    <div className={`anchor ${className}`}>
       {withoutBadgeChildren}
       <sup>{badgeChldren}</sup>
 
@@ -98,6 +99,6 @@ const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
   )
 }
 
-BadgeAnchor.defaultProps = defaultProps
+// BadgeAnchor.defaultProps = defaultProps
 BadgeAnchor.displayName = 'GeistBadgeAnchor'
 export default BadgeAnchor

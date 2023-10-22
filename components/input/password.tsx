@@ -22,7 +22,7 @@ const InputPasswordComponent = React.forwardRef<
 >(
   (
     {
-      hideToggle,
+      hideToggle = passwordDefaultProps.hideToggle,
       children,
       ...props
     }: React.PropsWithChildren<InputPasswordProps> & typeof defaultProps,
@@ -64,7 +64,7 @@ const InputPasswordComponent = React.forwardRef<
   },
 )
 
-InputPasswordComponent.defaultProps = passwordDefaultProps
+// InputPasswordComponent.defaultProps = passwordDefaultProps
 InputPasswordComponent.displayName = 'GeistInputPassword'
 const InputPassword = withScale(InputPasswordComponent)
 export default InputPassword

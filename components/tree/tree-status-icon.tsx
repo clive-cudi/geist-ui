@@ -16,9 +16,9 @@ const defaultProps = {
 
 const TreeStatusIcon: React.FC<TreeStatusIconProps> = ({
   color,
-  width,
-  height,
-  active,
+  width = defaultProps.width,
+  height = defaultProps.height,
+  active = defaultProps.active,
 }: TreeStatusIconProps & typeof defaultProps) => {
   const theme = useTheme()
   return (
@@ -45,6 +45,6 @@ const TreeStatusIcon: React.FC<TreeStatusIconProps> = ({
   )
 }
 
-TreeStatusIcon.defaultProps = defaultProps
+// TreeStatusIcon.defaultProps = defaultProps
 TreeStatusIcon.displayName = 'GeistTreeStatusIcon'
 export default TreeStatusIcon

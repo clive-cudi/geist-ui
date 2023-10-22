@@ -24,7 +24,7 @@ const UserComponent: React.FC<React.PropsWithChildren<UserProps>> = ({
   text,
   name,
   children,
-  className,
+  className = defaultProps.className,
   altText,
   ...props
 }: React.PropsWithChildren<UserProps> & typeof defaultProps) => {
@@ -89,7 +89,7 @@ const UserComponent: React.FC<React.PropsWithChildren<UserProps>> = ({
   )
 }
 
-UserComponent.defaultProps = defaultProps
+// UserComponent.defaultProps = defaultProps
 UserComponent.displayName = 'GeistUser'
 const User = withScale(UserComponent)
 export default User

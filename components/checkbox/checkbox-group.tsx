@@ -20,11 +20,11 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CheckboxGroupProps = Props & NativeAttrs
 
 const CheckboxGroupComponent: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
-  disabled,
+  disabled = false,
   onChange,
   value,
   children,
-  className,
+  className = '',
   ...props
 }: CheckboxGroupProps & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -79,7 +79,7 @@ const CheckboxGroupComponent: React.FC<React.PropsWithChildren<CheckboxGroupProp
   )
 }
 
-CheckboxGroupComponent.defaultProps = defaultProps
+// CheckboxGroupComponent.defaultProps = defaultProps
 CheckboxGroupComponent.displayName = 'GeistCheckboxGroup'
 const CheckboxGroup = withScale(CheckboxGroupComponent)
 

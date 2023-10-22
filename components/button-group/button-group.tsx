@@ -47,7 +47,7 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
 ) => {
   const theme = useTheme()
   const { SCALES } = useScale()
-  const { disabled, type, ghost, vertical, children, className, ...props } = groupProps
+  const { disabled = false, type = 'default', ghost = false, vertical = false, children, className = '',  ...props } = groupProps
   const initialValue = useMemo<ButtonGroupConfig>(
     () => ({
       disabled,
@@ -119,7 +119,7 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
   )
 }
 
-ButtonGroupComponent.defaultProps = defaultProps
+// ButtonGroupComponent.defaultProps = defaultProps
 ButtonGroupComponent.displayName = 'GeistButtonGroup'
 const ButtonGroup = withScale(ButtonGroupComponent)
 export default ButtonGroup

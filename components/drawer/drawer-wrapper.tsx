@@ -20,9 +20,9 @@ const defaultProps = {
 export type DrawerWrapperProps = Props
 
 const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
-  className,
+  className = defaultProps.className,
   children,
-  visible,
+  visible = defaultProps.visible,
   placement,
   ...props
 }: React.PropsWithChildren<DrawerWrapperProps> & typeof defaultProps) => {
@@ -157,6 +157,6 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   )
 }
 
-DrawerWrapper.defaultProps = defaultProps
+// DrawerWrapper.defaultProps = defaultProps
 DrawerWrapper.displayName = 'GeistDrawerWrapper'
 export default DrawerWrapper

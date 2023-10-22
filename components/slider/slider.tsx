@@ -71,17 +71,17 @@ const getValue = (
 }
 
 const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
-  hideValue,
-  disabled,
-  type,
-  step,
-  max,
-  min,
-  initialValue,
+  hideValue = defaultProps.hideValue,
+  disabled = defaultProps.disabled,
+  type = defaultProps.type,
+  step = defaultProps.step,
+  max = defaultProps.max,
+  min = defaultProps.min,
+  initialValue = defaultProps.initialValue,
   value: customValue,
   onChange,
-  className,
-  showMarkers,
+  className = defaultProps.className,
+  showMarkers = defaultProps.showMarkers,
   ...props
 }: React.PropsWithChildren<SliderProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -183,7 +183,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
   )
 }
 
-SliderComponent.defaultProps = defaultProps
+// SliderComponent.defaultProps = defaultProps
 SliderComponent.displayName = 'GeistSlider'
 const Slider = withScale(SliderComponent)
 export default Slider

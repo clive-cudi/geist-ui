@@ -14,8 +14,8 @@ const defaultProps = {
 
 const TreeFileIcon: React.FC<TreeFileIconProps> = ({
   color,
-  width,
-  height,
+  width = defaultProps.width,
+  height = defaultProps.height,
 }: TreeFileIconProps & typeof defaultProps) => {
   const theme = useTheme()
   return (
@@ -40,6 +40,6 @@ const TreeFileIcon: React.FC<TreeFileIconProps> = ({
   )
 }
 
-TreeFileIcon.defaultProps = defaultProps
+// TreeFileIcon.defaultProps = defaultProps
 TreeFileIcon.displayName = 'GeistTreeFileIcon'
 export default TreeFileIcon

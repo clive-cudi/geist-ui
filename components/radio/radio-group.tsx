@@ -22,13 +22,13 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type RadioGroupProps = Props & NativeAttrs
 
 const RadioGroupComponent: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
-  disabled,
+  disabled = defaultProps.disabled,
   onChange,
   value,
   children,
-  className,
+  className = defaultProps.className,
   initialValue,
-  useRow,
+  useRow = defaultProps.useRow,
   ...props
 }: React.PropsWithChildren<RadioGroupProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -82,7 +82,7 @@ const RadioGroupComponent: React.FC<React.PropsWithChildren<RadioGroupProps>> = 
   )
 }
 
-RadioGroupComponent.defaultProps = defaultProps
+// RadioGroupComponent.defaultProps = defaultProps
 RadioGroupComponent.displayName = 'GeistRadioGroup'
 const RadioGroup = withScale(RadioGroupComponent)
 export default RadioGroup

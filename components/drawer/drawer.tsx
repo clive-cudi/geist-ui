@@ -30,11 +30,11 @@ export type DrawerProps = Props & NativeAttrs
 
 const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps>> = ({
   visible: customVisible,
-  keyboard,
-  disableBackdropClick,
+  keyboard = defaultProps.keyboard,
+  disableBackdropClick = defaultProps.disableBackdropClick,
   onClose,
   onContentClick,
-  wrapClassName,
+  wrapClassName = defaultProps.wrapClassName,
   children,
   ...props
 }: React.PropsWithChildren<DrawerProps> & typeof defaultProps) => {
@@ -85,7 +85,7 @@ const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps>> = ({
   )
 }
 
-DrawerComponent.defaultProps = defaultProps
+// DrawerComponent.defaultProps = defaultProps
 DrawerComponent.displayName = 'GeistDrawer'
 const Drawer = withScale(DrawerComponent)
 export default Drawer

@@ -55,13 +55,13 @@ const getCurrentColor = (
 }
 
 const ProgressComponent: React.FC<ProgressProps> = ({
-  value,
-  max,
-  className,
-  type,
+  value = defaultProps.value,
+  max = defaultProps.max,
+  className = defaultProps.className,
+  type = defaultProps.type,
   colors,
-  fixedTop,
-  fixedBottom,
+  fixedTop = defaultProps.fixedTop,
+  fixedBottom = defaultProps.fixedBottom,
   ...props
 }: ProgressProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -122,7 +122,7 @@ const ProgressComponent: React.FC<ProgressProps> = ({
   )
 }
 
-ProgressComponent.defaultProps = defaultProps
+// ProgressComponent.defaultProps = defaultProps
 ProgressComponent.displayName = 'GeistProgress'
 const Progress = withScale(ProgressComponent)
 export default Progress

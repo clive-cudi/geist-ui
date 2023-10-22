@@ -18,9 +18,9 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type BreadcrumbsProps = Props & NativeAttrs
 
 const BreadcrumbsComponent: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
-  separator,
+  separator = defaultProps.separator,
   children,
-  className,
+  className = defaultProps.className,
 }: BreadcrumbsProps & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScale()
@@ -90,7 +90,7 @@ const BreadcrumbsComponent: React.FC<React.PropsWithChildren<BreadcrumbsProps>> 
   )
 }
 
-BreadcrumbsComponent.defaultProps = defaultProps
+// BreadcrumbsComponent.defaultProps = defaultProps
 BreadcrumbsComponent.displayName = 'GeistBreadcrumbs'
 const Breadcrumbs = withScale(BreadcrumbsComponent)
 export default Breadcrumbs

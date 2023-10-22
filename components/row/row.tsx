@@ -42,11 +42,11 @@ const getFlexAlignment = (justify: Justify, align: Align) => {
 
 const Container: React.FC<React.PropsWithChildren<RowProps>> = ({
   children,
-  component,
-  gap,
-  justify,
-  align,
-  className,
+  component = defaultProps.component,
+  gap = defaultProps.gap,
+  justify = defaultProps.justify,
+  align = defaultProps.align,
+  className = defaultProps.className,
   ...props
 }: React.PropsWithChildren<RowProps> & typeof defaultProps) => {
   const Component = component
@@ -75,6 +75,6 @@ const Container: React.FC<React.PropsWithChildren<RowProps>> = ({
   )
 }
 
-Container.defaultProps = defaultProps
+// Container.defaultProps = defaultProps
 Container.displayName = 'GeistContainer'
 export default Container

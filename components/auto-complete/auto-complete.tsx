@@ -86,22 +86,23 @@ const AutoCompleteComponent = React.forwardRef<
 >(
   (
     {
-      options,
-      initialValue: customInitialValue,
+      options = [] as AutoCompleteOptions,
+      initialValue: customInitialValue = '',
       onSelect,
       onSearch,
       onChange,
       searching,
       children,
-      type,
+      type = 'default',
       value,
-      clearable,
-      disabled,
+      clearable = false,
+      disabled = false,
       dropdownClassName,
       dropdownStyle,
-      disableMatchWidth,
-      disableFreeSolo,
+      disableMatchWidth = false,
+      disableFreeSolo = false,
       getPopupContainer,
+      className,
       ...props
     }: React.PropsWithChildren<AutoCompleteProps> & typeof defaultProps,
     userRef: React.Ref<HTMLInputElement | null>,
@@ -197,6 +198,7 @@ const AutoCompleteComponent = React.forwardRef<
 
     const inputProps = {
       ...props,
+      className,
       disabled,
       value: state,
     }
@@ -243,7 +245,7 @@ const AutoCompleteComponent = React.forwardRef<
   },
 )
 
-AutoCompleteComponent.defaultProps = defaultProps
+// AutoCompleteComponent.defaultProps = defaultProps
 AutoCompleteComponent.displayName = 'GeistAutoComplete'
 const AutoComplete = withScale(AutoCompleteComponent)
 

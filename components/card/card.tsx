@@ -28,10 +28,10 @@ export type CardProps = Props & NativeAttrs
 
 const CardComponent: React.FC<React.PropsWithChildren<CardProps>> = ({
   children,
-  hoverable,
-  className,
-  shadow,
-  type,
+  hoverable = false,
+  className = '',
+  shadow = false,
+  type = 'default',
   ...props
 }: CardProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -91,7 +91,7 @@ const CardComponent: React.FC<React.PropsWithChildren<CardProps>> = ({
   )
 }
 
-CardComponent.defaultProps = defaultProps
+// CardComponent.defaultProps = defaultProps
 CardComponent.displayName = 'GeistCard'
 const Card = withScale(CardComponent)
 export default Card

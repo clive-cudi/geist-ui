@@ -21,8 +21,8 @@ export type CollapseGroupProps = Props & NativeAttrs
 
 const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
   children,
-  accordion,
-  className,
+  accordion = true,
+  className = '',
   ...props
 }: React.PropsWithChildren<CollapseGroupProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
@@ -79,7 +79,7 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
   )
 }
 
-CollapseGroupComponent.defaultProps = defaultProps
+// CollapseGroupComponent.defaultProps = defaultProps
 CollapseGroupComponent.displayName = 'GeistCollapseGroup'
 const CollapseGroup = withScale(CollapseGroupComponent)
 export default CollapseGroup

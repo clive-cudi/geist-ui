@@ -105,10 +105,10 @@ const ImageBrowserComponent = React.forwardRef<
       url,
       title,
       children,
-      showFullLink,
-      invert,
-      anchorProps,
-      className,
+      showFullLink = defaultProps.showFullLink,
+      invert = defaultProps.invert,
+      anchorProps = defaultProps.anchorProps,
+      className = defaultProps.className,
       ...props
     }: React.PropsWithChildren<ImageBrowserProps> & typeof defaultProps,
     ref: React.Ref<HTMLDivElement>,
@@ -202,7 +202,7 @@ const ImageBrowserComponent = React.forwardRef<
   },
 )
 
-ImageBrowserComponent.defaultProps = defaultProps
+// ImageBrowserComponent.defaultProps = defaultProps
 ImageBrowserComponent.displayName = 'GeistImageBrowser'
 const ImageBrowser = withScale(ImageBrowserComponent)
 export default ImageBrowser

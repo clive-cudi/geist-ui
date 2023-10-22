@@ -22,12 +22,12 @@ export type CssTransitionProps = Props
 
 const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps>> = ({
   children,
-  className,
-  visible,
-  enterTime,
-  leaveTime,
-  clearTime,
-  name,
+  className = defaultProps.className,
+  visible = defaultProps.visible,
+  enterTime = defaultProps.enterTime,
+  leaveTime = defaultProps.leaveTime,
+  clearTime = defaultProps.clearTime,
+  name = defaultProps.name,
   ...props
 }: React.PropsWithChildren<CssTransitionProps> & typeof defaultProps) => {
   const [classes, setClasses] = useState<string>('')
@@ -70,6 +70,6 @@ const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps>> = ({
   })
 }
 
-CssTransition.defaultProps = defaultProps
+// CssTransition.defaultProps = defaultProps
 CssTransition.displayName = 'GeistCssTransition'
 export default CssTransition

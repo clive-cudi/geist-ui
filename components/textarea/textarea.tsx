@@ -40,17 +40,17 @@ const TextareaComponent = React.forwardRef<
 >(
   (
     {
-      type,
-      disabled,
-      readOnly,
+      type = defaultProps.type,
+      disabled = defaultProps.disabled,
+      readOnly = defaultProps.readOnly,
       onFocus,
       onBlur,
-      className,
-      initialValue,
+      className = defaultProps.className,
+      initialValue = defaultProps.initialValue,
       onChange,
       value,
       placeholder,
-      resize,
+      resize = defaultProps.resize,
       ...props
     }: React.PropsWithChildren<TextareaProps> & typeof defaultProps,
     ref: React.Ref<HTMLTextAreaElement | null>,
@@ -162,7 +162,7 @@ const TextareaComponent = React.forwardRef<
   },
 )
 
-TextareaComponent.defaultProps = defaultProps
+// TextareaComponent.defaultProps = defaultProps
 TextareaComponent.displayName = 'GeistTextarea'
 const Textarea = withScale(TextareaComponent)
 export default Textarea

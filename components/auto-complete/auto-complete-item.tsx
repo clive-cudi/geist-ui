@@ -81,7 +81,7 @@ const AutoCompleteItemComponent: React.FC<
   )
 }
 
-AutoCompleteItemComponent.defaultProps = defaultProps
+// AutoCompleteItemComponent.defaultProps = defaultProps
 AutoCompleteItemComponent.displayName = 'GeistAutoCompleteItem'
 const AutoCompleteItem = withScale(AutoCompleteItemComponent)
 export default AutoCompleteItem

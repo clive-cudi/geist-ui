@@ -21,7 +21,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
   children,
   value,
   label,
-  disabled,
+  disabled = defaultProps.disabled,
 }: React.PropsWithChildren<TabsItemProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
   const { register, currentValue } = useTabsContext()
@@ -147,7 +147,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
   return isActive ? <>{children}</> : null
 }
 
-TabsItemComponent.defaultProps = defaultProps
+// TabsItemComponent.defaultProps = defaultProps
 TabsItemComponent.displayName = 'GeistTabsItem'
 const TabsItem = withScale(TabsItemComponent)
 export default TabsItem

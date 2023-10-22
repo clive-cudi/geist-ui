@@ -23,11 +23,11 @@ export type PopoverItemProps = Props & NativeAttrs
 
 const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   children,
-  line,
-  title,
-  className,
+  line = defaultProps.line,
+  title = defaultProps.title,
+  className = defaultProps.className,
   onClick,
-  disableAutoClose,
+  disableAutoClose = defaultProps.disableAutoClose,
   ...props
 }: React.PropsWithChildren<PopoverItemProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -92,7 +92,7 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
   )
 }
 
-PopoverItemComponent.defaultProps = defaultProps
+// PopoverItemComponent.defaultProps = defaultProps
 PopoverItemComponent.displayName = 'GeistPopoverItem'
 const PopoverItem = withScale(PopoverItemComponent)
 export default PopoverItem

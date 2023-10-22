@@ -29,13 +29,13 @@ export type BackdropProps = Props & NativeAttrs
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
   ({
     children,
-    onClick,
-    visible,
+    onClick = defaultProps.onClick,
+    visible = defaultProps.visible,
     width,
-    onContentClick,
-    backdropClassName,
-    positionClassName,
-    layerClassName,
+    onContentClick = defaultProps.onContentClick,
+    backdropClassName = defaultProps.backdropClassName,
+    positionClassName = defaultProps.positionClassName,
+    layerClassName = defaultProps.layerClassName,
     ...props
   }: React.PropsWithChildren<BackdropProps> & typeof defaultProps) => {
     const theme = useTheme()
@@ -129,6 +129,6 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
   },
 )
 
-Backdrop.defaultProps = defaultProps
+// Backdrop.defaultProps = defaultProps
 Backdrop.displayName = 'GeistBackdrop'
 export default Backdrop

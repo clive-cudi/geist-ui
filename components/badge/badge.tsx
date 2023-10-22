@@ -34,10 +34,10 @@ const getBgColor = (type: NormalTypes, palette: GeistUIThemesPalette) => {
 }
 
 const BadgeComponent: React.FC<React.PropsWithChildren<BadgeProps>> = ({
-  type,
-  className,
+  type = defaultProps.type,
+  className = defaultProps.className,
   children,
-  dot,
+  dot = defaultProps.dot,
   ...props
 }: BadgeProps & typeof defaultProps) => {
   const theme = useTheme()
@@ -80,7 +80,7 @@ const BadgeComponent: React.FC<React.PropsWithChildren<BadgeProps>> = ({
   )
 }
 
-BadgeComponent.defaultProps = defaultProps
+// BadgeComponent.defaultProps = defaultProps
 BadgeComponent.displayName = 'GeistBadge'
 const Badge = withScale(BadgeComponent)
 export default Badge

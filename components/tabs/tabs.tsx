@@ -48,18 +48,18 @@ export type TabsProps = Props & NativeAttrs
 const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   initialValue: userCustomInitialValue,
   value,
-  hideDivider,
+  hideDivider = defaultProps.hideDivider,
   hideBorder,
   children,
   onChange,
-  className,
-  leftSpace,
-  highlight,
-  hoverHeightRatio,
-  hoverWidthRatio,
-  activeClassName,
-  activeStyle,
-  align,
+  className = defaultProps.className,
+  leftSpace = defaultProps.leftSpace,
+  highlight = defaultProps.highlight,
+  hoverHeightRatio = defaultProps.hoverHeightRatio,
+  hoverWidthRatio = defaultProps.hoverWidthRatio,
+  activeClassName = defaultProps.activeClassName,
+  activeStyle = defaultProps.activeStyle,
+  align = defaultProps.align,
   ...props
 }: React.PropsWithChildren<TabsProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -179,7 +179,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   )
 }
 
-TabsComponent.defaultProps = defaultProps
+// TabsComponent.defaultProps = defaultProps
 TabsComponent.displayName = 'GeistTabs'
 const Tabs = withScale(TabsComponent)
 export default Tabs
