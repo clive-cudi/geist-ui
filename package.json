@@ -1,6 +1,6 @@
 {
-  "name": "@geist-ui/core",
-  "version": "2.3.8",
+  "name": "@clive-cudi/geist-ui",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -28,12 +28,9 @@
   "license": "MIT",
   "description": "Modern and minimalist React UI library.",
   "homepage": "https://geist-ui.dev",
-  "bugs": {
-    "url": "https://github.com/geist-org/geist-ui/issues/new/choose"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/geist-org/geist-ui"
+    "url": "https://github.com/clive-cudi/geist-ui"
   },
   "prettier": "@geist-ui/prettier-config",
   "keywords": [
