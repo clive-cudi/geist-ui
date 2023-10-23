@@ -16,12 +16,12 @@
 
 ## Quick Start
 
-1. run `yarn add @geist-ui/core` or `npm i @geist-ui/core` install it.
+1. run `yarn add @clive-cudi/geist-ui` or `npm i @clive-cudi/geist-ui` install it.
 
 2. import into project:
 
 ```jsx
-import { GeistProvider, CssBaseline } from '@geist-ui/core'
+import { GeistProvider, CssBaseline } from '@clive-cudi/geist-ui'
 
 const Application = () => (
   <GeistProvider>
@@ -54,3 +54,13 @@ const Application = () => (
 ## LICENSE
 
 [MIT](./LICENSE)
+
+
+### Disclaimer
+- This is a fork of [geist-ui](https://github.com/geist-org/geist-ui)
+- I wanted to resolve some annoying warning when using geist-ui in a react project and of course tweak the library a bit to fit some specs.
+  - Here's the warning I'm talking about. You might have come across it
+  ```{r}
+  Warning: GeistBreadcrumbs: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.
+  ```
+  - There was an [issue](https://github.com/geist-org/geist-ui/issues/838#issue-1702946243) raised on this in the [geist-ui](https://github.com/geist-org/geist-ui) repo
